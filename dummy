@@ -1,0 +1,227 @@
+🔹 1. git init
+
+Usage:
+
+git init
+
+
+What it does:
+Initializes a new Git repository in your current directory. It creates a .git folder.
+
+When to use:
+When starting a new project and want to track it using Git.
+
+🔹 2. git clone
+
+Usage:
+
+git clone <repository_url>
+
+
+What it does:
+Downloads a copy of a remote repository to your local system.
+
+Example:
+
+git clone https://github.com/user/project.git
+
+🔹 3. git status
+
+Usage:
+
+git status
+
+
+What it does:
+Shows the current state of the working directory:
+
+Modified files
+
+New files
+
+Staged vs unstaged changes
+
+🔹 4. git add
+
+Usage:
+
+git add <file>
+git add .
+
+
+What it does:
+Moves changes from working directory → staging area.
+
+Examples:
+
+git add file.txt     # Adds one file
+git add .            # Adds all files
+
+🔹 5. git commit
+
+Usage:
+
+git commit -m "Your message"
+
+
+What it does:
+Saves staged changes to the local repository with a message.
+
+Example:
+
+git commit -m "Fixed login bug"
+
+🔹 6. git push
+
+Usage:
+
+git push origin <branch>
+
+
+What it does:
+Uploads your local commits to the remote repository.
+
+Example:
+
+git push origin main
+
+🔹 7. git pull
+
+Usage:
+
+git pull
+
+
+What it does:
+Fetches and merges changes from the remote repo into your local branch.
+
+Equivalent to:
+
+git fetch + git merge
+
+🔹 8. git fetch
+
+Usage:
+
+git fetch
+
+
+What it does:
+Downloads changes from remote but DOES NOT merge automatically.
+
+🔹 9. git branch
+➤ List branches
+git branch
+
+➤ Create branch
+git branch <branch-name>
+
+➤ Delete branch
+git branch -d <branch-name>
+
+🔹 10. git checkout
+➤ Switch branches
+git checkout <branch-name>
+
+➤ Create + switch
+git checkout -b <branch-name>
+
+🔹 11. git merge
+
+Usage:
+
+git merge <branch>
+
+
+What it does:
+Merges another branch into your current branch.
+
+Example:
+
+git merge dev
+
+🔹 12. git log
+
+Usage:
+
+git log
+
+
+What it does:
+Shows commit history.
+
+Shorter format:
+git log --oneline
+
+🔹 13. git reset
+➤ Reset staged file (soft reset)
+git reset <file>
+
+➤ Undo commit but keep changes
+git reset --soft HEAD~1
+
+➤ Undo commit & remove changes
+git reset --hard HEAD~1
+
+🔹 14. git revert
+
+Usage:
+
+git revert <commit-id>
+
+
+What it does:
+Creates a NEW commit that reverses an old commit.
+
+Safer than reset.
+
+🔹 15. git stash
+➤ Save changes temporarily
+git stash
+
+➤ View stashes
+git stash list
+
+➤ Apply stash
+git stash apply
+
+🔹 16. git remote
+➤ List remotes
+git remote -v
+
+➤ Add remote
+git remote add origin <url>
+
+🔹 17. git diff
+
+Usage:
+
+git diff              # unstaged changes
+git diff --staged     # staged changes
+
+
+Shows line-by-line differences.
+
+🔹 18. git rm
+
+Usage:
+
+git rm <file>
+
+
+Deletes a file and stages the deletion.
+
+🔹 19. git tag
+➤ Create tag
+git tag v1.0
+
+➤ Push tag
+git push origin v1.0
+
+🔹 20. git config
+➤ Set username and email
+git config --global user.name "Nikhil"
+git config --global user.email "nikhil@example.com"
+
+➤ Check config
+git config --list
