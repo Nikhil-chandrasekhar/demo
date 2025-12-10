@@ -49,6 +49,7 @@ git add <file>
 git add .
 
 
+
 What it does:
 Moves changes from working directory → staging area.
 
@@ -225,3 +226,140 @@ git config --global user.email "nikhil@example.com"
 
 ➤ Check config
 git config --list
+
+2. Advanced Commit & Version History Commands
+Show complete commit history (graph format)
+git log --oneline --graph --decorate --all
+
+Search commits using keywords
+git log --all --grep="bug fix"
+
+Show commit that modified a specific file
+git log --follow <filename>
+
+Show what changed in the last commit
+git show
+git show <commit-id>
+
+Show file content from a specific version
+git show <commit-id>:<path/file.ext>
+
+🔁 3. Version Control & Reverting to Previous Versions
+Reset to a previous version (soft – keep changes staged)
+git reset --soft <commit-id>
+
+Reset to previous version (mixed – keep files but unstage)
+git reset <commit-id>
+
+Reset to previous version (hard – delete working changes)
+git reset --hard <commit-id>
+
+Undo a specific commit without deleting history
+git revert <commit-id>
+
+Create a new commit from an old version
+git checkout <commit-id>
+
+
+Then create a branch:
+
+git checkout -b hotfix-from-old-version
+
+🌿 4. Advanced Branching & Release Versioning
+Create a branch for a new release
+git checkout -b release/v2.0
+
+Tag the current version
+git tag v2.1
+
+Tag with message (annotated tag – recommended)
+git tag -a v2.1 -m "Release version 2.1"
+
+Push tags to remote
+git push origin --tags
+
+Delete a tag
+git tag -d v2.1
+git push origin :refs/tags/v2.1
+
+🧩 5. Stash & Version Safe-Keeping (Advanced)
+Save changes with message
+git stash push -m "WIP: implementing login"
+
+List stashes
+git stash list
+
+Apply a specific stash
+git stash apply stash@{2}
+
+Apply and delete stash
+git stash pop
+
+Create a stash branch
+git stash branch new-feature stash@{0}
+
+🧠 6. Debugging Version Issues
+Find which commit broke something (binary search)
+git bisect start
+git bisect bad        # current commit is bad
+git bisect good <commit-id>
+
+
+Git will help you find the exact commit that introduced the bug.
+
+⚠️ 7. Rewrite History (Advanced, Dangerous)
+
+Only use before pushing to shared branch.
+
+Interactive rebase (combine, edit, drop commits)
+git rebase -i HEAD~10
+
+Change commit message of last commit
+git commit --amend
+
+Change author of a commit
+git commit --amend --author="Nikhil <email@domain.com>"
+
+Squash multiple commits
+
+Inside rebase (pick → squash):
+
+git rebase -i HEAD~5
+
+🌐 8. Working With Remotes (Version Control with Repo)
+Show all remote URLs
+git remote -v
+
+Change remote repo URL
+git remote set-url origin <new-url>
+
+Fetch from remote without merging
+git fetch origin
+
+View difference between your branch vs remote
+git diff origin/main
+
+🆚 9. Compare Versions (Diff Between Two Tags/Commits)
+Compare two commits
+git diff <commit1> <commit2>
+
+Compare two versions (tags)
+git diff v1.0 v2.0
+
+Compare branch vs main
+git diff main..feature/login
+
+🚚 10. Cherry Pick (Bring specific version to another branch)
+Copy a specific commit to another branch
+git checkout main
+git cherry-pick <commit-id>
+
+Cherry pick a range of commits
+git cherry-pick <commit1>^..<commit2>
+
+📦 11. Clean Working Directory
+Remove untracked files
+git clean -f
+
+Remove untracked files + folders
+git clean -fd
